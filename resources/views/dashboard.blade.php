@@ -48,7 +48,7 @@ table {
             <div class="search-bar">
                 <input type="text" placeholder="Search...">
                 <button>Search</button>
-                <button style="float: right; margin-right:10px;"><a href="{{ route('product.add') }}">Add Product</a></button>
+                <button style="float: right; margin-right:10px; background:yellow;"><a href="{{ route('product.add') }}">Add Product</a></button>
 
             </div>
             <table>
@@ -72,7 +72,7 @@ table {
                         <td>
                      <button style="background: orange;"><a href="">Sell</a> </button>||
                     <button style="background: blueviolet;"> <a href="{{ route('product.edit',$item->id) }}">Edit</a></button>||
-                    <button style="background: red;"><a href="">Delete</a></button>
+                    <button style="background: red;"><a href="{{ route('product.delete',$item->id) }}">Delete</a></button>
                         </td>
                     </tr>
 

@@ -47,24 +47,25 @@
 
     <div class="form-container">
         <h3> <a href="{{ route('product.all') }}" style="background:orange;">Go Back</a></h3>
-        <h2>Add Product</h2>
-        <form action="{{ route('product.store') }}" method="POST" >
+        <h2>Edit Product</h2>
+        <form action="{{ route('product.update') }}" method="POST" >
              @csrf
 
+             <input type="hidden" name="id" value="{{ $product->id }}">
             <div class="form-group">
                 <label for="product_name">Product Name:</label>
-                <input type="text" id="product_name" name="name" required>
+                <input type="text" id="product_name" name="name" value="{{ $product->name }}" required>
             </div>
             <div class="form-group">
                 <label for="quantity">Quantity:</label>
-                <input type="number" id="quantity" name="quantity" required>
+                <input type="number" id="quantity" name="quantity" value="{{ $product->quantity }}" required>
             </div>
             <div class="form-group">
                 <label for="price">Price:</label>
-                <input type="number" id="price" name="price" step="0.01" required>
+                <input type="number" id="price" name="price" value="{{ $product->price }}" step="0.01" required>
             </div>
             <div class="form-group">
-                <input type="submit" value="Submit">
+                <input type="submit" value="Update">
             </div>
         </form>
     </div>

@@ -39,5 +39,27 @@ class ProductController extends Controller
             return view('product_edit', compact('product'));
     }
 
+    public function ProductUpdate(Request $request){
+        $product_id = $request->id;
+        DB::table('products')
+        ->where('id', $product_id)
+        ->update([
+            'name' => $request->name,
+            'quantity' => $request->quantity,
+            'price' => $request->price,
+            'updated_at' => Carbon::now(),
+       ]);
+     return redirect()->route('product.all');
+
+    }
+
+    public function ProductDelete($id){
+        $product = DB::table('products')->where('id', $id)->first();
+        if ($product) {
+            DB::table('products')->where('id', $id)->delete();
+        }
+        return redirect()->back();
+    }
+
 
 }
