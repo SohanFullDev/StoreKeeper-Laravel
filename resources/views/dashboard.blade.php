@@ -39,7 +39,7 @@ table {
         }
     </style>
     <ul>
-        <li><a href="#home">Home</a></li>
+        <li><a href="{{ route('product.all') }}">Home</a></li>
         <li><a href="#news">Sales</a></li>
 
       </ul>
@@ -62,15 +62,21 @@ table {
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Table rows will be dynamically populated here -->
+
+                    @foreach($product as $key=> $item)
                     <tr>
-                        <td>1</td>
-                        <td>Product A</td>
-                        <td>10</td>
-                        <td>$20</td>
-                        <td> <button>Sell</button>||<button>Edit</button>||<button>Delete</button></td>
+                        <td>{{ $key+1 }}</td>
+                        <td>{{ $item->name }}</td>
+                        <td>{{ $item->quantity }}</td>
+                        <td>{{ $item->price }}</td>
+                        <td>
+                            <button><a href="">Sell</a> </button>||
+                            <button> <a href="">Edit</a></button>||
+                            <button><a href="">Delete</a></button>
+                        </td>
                     </tr>
-                    <!-- More rows will go here -->
+
+                    @endforeach
                 </tbody>
             </table>
 
