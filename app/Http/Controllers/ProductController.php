@@ -31,9 +31,13 @@ class ProductController extends Controller
             'created_at' => Carbon::now(),
         ]);
 
-
         return redirect()->route('product.all');
-
-
     }
+
+    public function ProductEdit($id){
+             $product = DB::table('products')->where('id', $id)->first();
+            return view('product_edit', compact('product'));
+    }
+
+
 }

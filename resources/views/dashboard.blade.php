@@ -70,9 +70,9 @@ table {
                         <td>{{ $item->quantity }}</td>
                         <td>{{ $item->price }}</td>
                         <td>
-                            <button style="background: orange;"><a href="">Sell</a> </button>||
-                            <button style="background: blueviolet;"> <a href="">Edit</a></button>||
-                            <button style="background: red;"><a href="">Delete</a></button>
+                     <button style="background: orange;"><a href="">Sell</a> </button>||
+                    <button style="background: blueviolet;"> <a href="{{ route('product.edit',$item->id) }}">Edit</a></button>||
+                    <button style="background: red;"><a href="">Delete</a></button>
                         </td>
                     </tr>
 
