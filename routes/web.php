@@ -28,6 +28,9 @@ Route::controller(ProductController::class)->group(function(){
     Route::post('/product/update', 'ProductUpdate')->name('product.update');
     Route::get('/product/delete/{id}', 'ProductDelete')->name('product.delete');
 
+    Route::get('/product/sell/{id}', 'ProductSell')->name('product.sell');
+    Route::post('/product/updateQ', 'UpdateQuantity')->name('product.updateQ');
+
 });
 
 

@@ -61,5 +61,22 @@ class ProductController extends Controller
         return redirect()->back();
     }
 
+    public function ProductSell($id){
+        $product = DB::table('products')->where('id', $id)->first();
+       return view('product_sell', compact('product'));
+}
+
+public function UpdateQuantity(Request $request){
+    $product_id = $request->id;
+    DB::table('products')
+    ->where('id', $product_id)
+    ->update([
+       'quantity' => $request->quantity,
+       'updated_at' => Carbon::now(),
+   ]);
+ return redirect()->route('product.all');
+
+}
+
 
 }
