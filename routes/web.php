@@ -31,6 +31,8 @@ Route::controller(ProductController::class)->group(function(){
     Route::get('/product/sell/{id}', 'ProductSell')->name('product.sell');
     Route::post('/product/updateQ', 'UpdateQuantity')->name('product.updateQ');
 
+    Route::get('/product/salefig', 'SaleFigure')->name('product.salefig');
+
 });
 
 

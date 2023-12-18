@@ -78,5 +78,28 @@ public function UpdateQuantity(Request $request){
 
 }
 
+  public function SaleFigure(){
+
+            $todaySales = DB::table('products')
+            ->whereDate('created_at', Carbon::today())
+            ->sum(DB::raw('quantity * price'));
+
+            $yesterdaySales = DB::table('products')
+            ->whereDate('created_at', Carbon::yesterday())
+            ->sum(DB::raw('quantity * price'));
+
+            $thisMonthSales = DB::table('products')
+            ->whereYear('created_at', Carbon::now()->year)
+            ->whereMonth('created_at', Carbon::now()->month)
+            ->sum(DB::raw('quantity * price'));
+
+            $lastMonthSales = DB::table('products')
+            ->whereYear('created_at', Carbon::now()->subMonth()->year)
+            ->whereMonth('created_at', Carbon::now()->subMonth()->month)
+            ->sum(DB::raw('quantity * price'));
+
+      return view('product_salefig', compact('todaySales','yesterdaySales','thisMonthSales','lastMonthSales'));
+    }
+
 
 }

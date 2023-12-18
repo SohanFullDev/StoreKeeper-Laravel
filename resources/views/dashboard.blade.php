@@ -40,7 +40,7 @@ table {
     </style>
     <ul>
         <li><a href="{{ route('product.all') }}">Home</a></li>
-        <li><a href="#news">Sales</a></li>
+        <li><a href="{{ route('product.salefig') }}">Sales Figures</a></li>
 
       </ul>
       <div class="products">
