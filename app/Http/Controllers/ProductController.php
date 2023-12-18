@@ -101,5 +101,15 @@ public function UpdateQuantity(Request $request){
       return view('product_salefig', compact('todaySales','yesterdaySales','thisMonthSales','lastMonthSales'));
     }
 
+    public function SaleTransaction(){
+
+        $saleshistories= DB::table('products')
+            ->orderBy('created_at', 'desc')
+           // ->get();
+           ->paginate(5);
+        return view('sale_transaction', compact('saleshistories'));
+
+    }
+
 
 }

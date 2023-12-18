@@ -41,6 +41,7 @@ table {
     <ul>
         <li><a href="{{ route('product.all') }}">Home</a></li>
         <li><a href="{{ route('product.salefig') }}">Sales Figures</a></li>
+        <li><a href="{{ route('product.saletransaction') }}">Sales Transaction History</a></li>
 
       </ul>
       <div class="products">
