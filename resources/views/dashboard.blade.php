@@ -83,6 +83,6 @@ table {
             </table>
             {{ $product->links() }}
 
-            <p>&copy; Sohanur Rahman Sohan || Programmer Sohan</p>
+            <p style="text-align: center;">&copy; Sohanur Rahman Sohan || Programmer Sohan</p>
       </div>
 </x-app-layout>

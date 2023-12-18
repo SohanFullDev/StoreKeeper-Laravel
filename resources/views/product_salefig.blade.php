@@ -58,7 +58,7 @@
             </div>
         </div>
 
-        <p class="footer">&copy; Sohanur Rahman Sohan || Programmer Sohan</p>
+        <p style="text-align: center;">&copy; Sohanur Rahman Sohan || Programmer Sohan</p>
     </div>
 
 

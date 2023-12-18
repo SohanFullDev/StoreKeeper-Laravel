@@ -70,6 +70,6 @@
         </form>
     </div>
 
-    <p>&copy; Sohanur Rahman Sohan || Programmer Sohan</p>
+    <p style="text-align: center;">&copy; Sohanur Rahman Sohan || Programmer Sohan</p>
 </body>
 </x-app-layout>
